@@ -1,0 +1,24 @@
+<div class="product-list-container">
+    <div class="search-bar">
+      <input type="text" placeholder="Rechercher des produits..."  (input)="onSearch()">
+    </div>
+    <div class="content">
+      <div class="sidebar">
+        <h3>Catégories</h3>
+        <ul>
+          <li *ngFor="let category of categories" (click)="selectCategory(category)">
+            {{ category }}
+          </li>
+        </ul>
+      </div>
+      <div class="product-list">
+        <div class="product-item" *ngFor="let product of filteredProducts">
+          <img [src]="product.image" alt="{{ product.name }}">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <p>{{ product.price | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

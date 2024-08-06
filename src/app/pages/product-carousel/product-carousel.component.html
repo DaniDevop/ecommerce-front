@@ -1,0 +1,16 @@
+<div class="product-carousel">
+    <div class="carousel-container" id="carousel-container">
+      <div class="carousel-slide" *ngFor="let product of products">
+        <img [src]="product.image" alt="{{ product.name }}">
+        <div class="carousel-caption">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <a href="/detailsProduct" class="btn">Voir le produit</a>
+          <button class="btn-add-to-cart" (click)="addToCart(product)">Ajouter au panier</button>
+        </div>
+      </div>
+    </div>
+    <a class="prev" (click)="prevSlide()">&#10094;</a>
+    <a class="next" (click)="nextSlide()">&#10095;</a>
+  </div>
+  
